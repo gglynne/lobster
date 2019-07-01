@@ -1,0 +1,27 @@
+version: 0.2
+# https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-example
+env:
+  variables:
+    NAME: "lobster"
+
+phases:
+  install:
+    commands:
+      - echo Entered the install phase...
+    finally:
+      - echo This always runs even if the install phase fails 
+  pre_build:
+    commands:
+      - echo Entered the pre_build phase...
+    finally:
+      - echo This always runs even if the pre_build phase fails 
+  build:
+    commands:
+      - echo Entered the build phase...
+      - echo Build started on `date`
+    finally:
+      - echo This always runs even if the build phase fails
+  post_build:
+    commands:
+      - echo Entered the post_build phase...
+      - echo Build completed on `date`
