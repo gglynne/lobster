@@ -6,6 +6,8 @@ env:
 
 phases:
   install:
+    runtime-versions:
+      python: 3.6
     commands:
       - echo Entered the install phase...
     finally:
